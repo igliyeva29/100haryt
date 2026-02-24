@@ -59,7 +59,7 @@ function Login() {
   return (
     <div>
       <OutClick action={() => setOpen(false)}>
-        <Button title="Girmek" action={() => setOpen(!open)}>
+        <Button title={t(('login'))} action={() => setOpen(!open)}>
           <span className="mr-2">
             <GoPerson size={24} />
           </span>
@@ -89,7 +89,7 @@ function Login() {
                 </div>
                 <div className="">Aksiýalara gatnaşmak we söwdaňyzda bonuslary ulanmak</div>
               </div>
-              <button onClick={() => setOpenLogin(true)} className="bg-custom-green text-white text-center w-full py-2 rounded-lg mt-3">Girmek</button>
+              <button onClick={() => setOpenLogin(true)} className="bg-custom-green text-white text-center w-full py-2 rounded-lg mt-3">{t(('login'))}</button>
               {active === "girmek" ?
                 <div>
                   <Popup title="Login" open={openLogin} setOpen={setOpenLogin} sendData={sendData} active={active} setActive={setActive}>
@@ -108,8 +108,8 @@ function Login() {
 
                     <div className='text-center text-sm mb-3'>
                       <div>
-                        <span>Parolunyzy unutdynyzmy?</span>
-                        <button onClick={() => { setOpen(false), setOpenLogin(false), setOpenForget(true) }} className="text-green-500 mb-3 mx-1">Chalyshmak</button>
+                        <span>{t(('forgotPassword'))}</span>
+                        <button onClick={() => { setOpen(false), setOpenLogin(false), setOpenForget(true) }} className="text-green-500 mb-3 mx-1">{(t('change'))}</button>
                       </div>
                     </div>
                   </Popup>

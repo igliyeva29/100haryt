@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import { Route, Routes } from "react-router-dom"
 import Main from './pages/Main'
 import Shops from './pages/Shops'
+import Category from './pages/Category'
 import NotFound from "./pages/NotFound"
 import Search from "./pages/Search"
 import GoToTop from "./components/GoToTop"
@@ -18,11 +19,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/shops" element={<Shops />} />
+        <Route path="/category/:id" element={<Category />} />
         <Route path="/search/:keyword" element={<Search />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <GoToTop />
-      <Footer/>
+      <Footer />
     </>
   )
 }

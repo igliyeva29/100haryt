@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom"
 import { cleaning, electronics, forKids, furniture, healthAndBeauty, homeComfort, offiseStuff, parfums } from "../../../assets/images"
+import { useTranslation } from "react-i18next"
 
 function Recommended() {
+    const { t } = useTranslation()
+
     return (
         <div className="container mx-auto py-5">
             <div className="">
-                <div className="text-2xl font-semibold text-black pb-5">One chykanlar</div>
+                <div className="text-2xl font-semibold text-black pb-5">{t(('recommended'))}</div>
                 <div className="grid grid-cols-4 gap-3">
                     <Link to={"#"} className="relative">
                         <img src={healthAndBeauty} className="rounded-2xl overflow-hidden transition-all" alt="" />

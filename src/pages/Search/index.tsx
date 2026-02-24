@@ -13,7 +13,6 @@ function index() {
   })
 
   const brands = useGetAllBrandsByKeyword(keyword)
-  console.log(brands.data)
   const products = useGetAllProductsByKeyword(keyword,data.order,data.brands)
 
   return (

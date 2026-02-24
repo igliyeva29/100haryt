@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom"
 import { service1, service2, service3, service4 } from "../../../assets/images"
+import { useTranslation } from "react-i18next"
 
 function Services() {
+  const { t } = useTranslation()
+
   return (
     <div className="container mx-auto">
       <div className="">
-        <div className="text-2xl font-semibold text-black pb-5">Hyzmatlar</div>
+        <div className="text-2xl font-semibold text-black pb-5">{t(('services'))}</div>
         <div className="grid grid-cols-4 gap-3">
           <Link to={"#"}>
             <img src={service1} className="rounded-xl overflow-hidden" alt="" />

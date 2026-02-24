@@ -18,7 +18,7 @@ function Language() {
         {lang.toUpperCase()}
       </Button>
       
-      <div className={"absolute top-8 bg-white py-1 px-2 rounded flex flex-col shadow transtion-all duration-200 "+(open ? "opacity-100 visible" : "opacity-0 invisible")}>
+      <div className={"absolute top-16 bg-white py-1 px-2 rounded flex flex-col shadow transtion-all duration-200 "+(open ? "opacity-100 visible" : "opacity-0 invisible")}>
         <button onClick={() => (switchLang('tm'), setOpen(false))} className={"flex items-center p-2 rounded "+(lang == 'tm' && "text-custom-green")}>TM</button>
         <div>
           <button onClick={() => (switchLang('ru'), setOpen(false))} className={"flex items-center p-2 rounded "+(lang == 'ru' && "text-custom-green")}>RU</button>

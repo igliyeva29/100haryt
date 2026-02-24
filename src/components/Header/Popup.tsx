@@ -1,7 +1,9 @@
 import { BiX } from 'react-icons/bi'
 import type { PopupProps } from '../../types/Header'
+import { useTranslation } from 'react-i18next'
 
 function Popup({ children, title, open, setOpen, active, setActive, sendData }: PopupProps) {
+  const {t} = useTranslation()
 
   return (
     <div className=''>
@@ -15,16 +17,16 @@ function Popup({ children, title, open, setOpen, active, setActive, sendData }: 
         </div>
 
         <div className='flex justify-start border-b border-gray-100'>
-          <button onClick={() => setActive("girmek")} className={'text-lg font-semibold py-1 px-3' + (active == "girmek" && "border border-b-3 border-gray-300")}>Girmek</button>
-          <button onClick={() => setActive("agza bolmak")} className={'text-lg font-semibold py-1 px-3 ml-5' + (active == "agza bolmak" && "border border-b-3 border-gray-300")}>Agza bolmak</button>
+          <button onClick={() => setActive("girmek")} className={'text-lg font-semibold py-1 px-3' + (active == "girmek" && "border border-b-3 border-gray-300")}>{t(('login'))}</button>
+          <button onClick={() => setActive("agza bolmak")} className={'text-lg font-semibold py-1 px-3 ml-5' + (active == "agza bolmak" && "border border-b-3 border-gray-300")}>{t(('signUp'))}</button>
         </div>
 
         <div>{children}</div>
         {
           active == "girmek" ?
-          <button onClick={sendData} className='bg-custom-green text-lg text-white font-bold w-full hover:opacity-80 py-3 mb-3 rounded-lg'>Girmek</button>
+          <button onClick={sendData} className='bg-custom-green text-lg text-white font-bold w-full hover:opacity-80 py-3 mb-3 rounded-lg'>{t(('login'))}</button>
           :
-          <button onClick={sendData} className='bg-custom-green text-lg text-white font-bold w-full hover:opacity-80 py-3 mb-3 rounded-lg'>Dowam etmek</button>
+          <button onClick={sendData} className='bg-custom-green text-lg text-white font-bold w-full hover:opacity-80 py-3 mb-3 rounded-lg'>{t(('continue'))}</button>
         }
       </div>
     </div>

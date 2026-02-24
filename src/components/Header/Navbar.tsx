@@ -32,26 +32,28 @@ function Navbar() {
             </div>
           </div>
           <div className="border-t-2 border-gray-100 py-2 flex items-center font-bold text-lg">
-             <Category open={open} setOpen={setOpen} />
-            <Stick />
+            <Category open={open} setOpen={setOpen} />
+            <div className="ml-3">
+              <Stick />
+            </div>
             <Link to={'/shops'} className="flex items-center gap-3 mx-3 text-custom-red">
               <img src={shops} alt="" />
-              <span>Shops</span>
+              <span>{t(('shops'))}</span>
             </Link>
             <Stick />
             <Link to={'/brands'} className="flex items-center gap-3 mx-3 text-custom-red">
               <img src={brands} alt="" />
-              <span>Brendler</span>
+              <span>{t(('brands'))}</span>
             </Link>
             <Stick />
             <Link to={'/markets'} className="flex items-center gap-3 mx-3 text-custom-red">
               <img src={markets} className="w-8" alt="" />
-              <span>Marketler</span>
+              <span>{t(('brands'))}</span>
             </Link>
             <Stick />
             <Link to={'/products'} className="flex items-center gap-3 mx-3 text-custom-red">
               <img src={ikea} className="w-8" alt="" />
-              <span>IKEA</span>
+              <span>{t(('IKEA'))}</span>
             </Link>
           </div>
         </div>
