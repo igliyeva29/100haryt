@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+button {
+  cursor: pointer;
+}
+
+body {
+  background-color: rgb(240, 238, 243);
+  
+}
+
+@theme {
+  --color-custom-gray: #f3f4f6;
+  --color-custom-bg: rgb(237, 243, 247);
+  --color-custom-red: #ff0000;
+  --color-custom-blue: #4b5563;
+  --color-custom-green: #4bb543;
+}
+
+
+.dots {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: fade 0.8s ease-in-out alternate infinite;
+}
+
+.dots div:nth-of-type(2) {
+  animation-delay: -0.2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+    height: 20px;
+    width: 20px;
+  }
+
+  to {
+    opacity: 0.5;
+    height: 12px;
+    width: 12px;
+  }
+}
+
+/* Change the color of the bar */
+#nprogress .bar {
+  background: linear-gradient(to right, #2ecc71, #3498db) !important;
+  height: 3.5px !important;
+}
+
+#nprogress .spinner{
+  display: none;
+}

@@ -1,0 +1,56 @@
+// Banner images
+export {default as topBanner1} from './banners/topBanner_1.png'
+export {default as topBanner2} from './banners/topBanner_2.png'
+export {default as topBanner3} from './banners/topBanner_3.png'
+export {default as banner1} from './banners/banner1.png'
+export {default as banner2} from './banners/banner2.png'
+export {default as banner3} from './banners/banner3.png'
+export {default as banner4} from './banners/banner4.png'
+export {default as banner5} from './banners/banner5.png'
+export {default as banner6} from './banners/banner6.png'
+export {default as banner7} from './banners/banner7.png'
+export {default as banner8} from './banners/banner8.png'
+export {default as banner9} from './banners/banner9.png'
+export {default as banner10} from './banners/banner10.png'
+export {default as healthAndBeauty} from './banners/healthAndBeauty.png'
+export {default as forKids} from './banners/forKids.png'
+export {default as furniture} from './banners/furniture.png'
+export {default as parfums} from './banners/parfums.png'
+export {default as offiseStuff} from './banners/offiseStuff.png'
+export {default as homeComfort} from './banners/homeComfort.png'
+export {default as cleaning} from './banners/cleaning.png'
+export {default as electronics} from './banners/electronics.png'
+export {default as clothes} from './banners/clothes.png'
+export {default as jewelery} from './banners/jewelery.png'
+export {default as gifts} from './banners/gifts.png'
+export {default as grocery} from './banners/grocery.png'
+export {default as garden} from './banners/garden.png'
+export {default as pharmacy} from './banners/pharmacy.png'
+export {default as auto} from './banners/auto.png'
+export {default as animals} from './banners/animals.png'
+export {default as sport} from './banners/sport.png'
+export {default as building} from './banners/building.png'
+
+// Logo
+export {default as logo} from './logo.svg'
+export {default as shops} from './shops.svg'
+export {default as brands} from './brands.svg'
+export {default as markets} from './market.png'
+export {default as ikea} from './ikea.png'
+
+// shops
+export {default as brand} from './shops/gyratComputers.png'
+
+// service
+export {default as service1} from './banners/hyzmat1.png'
+export {default as service2} from './banners/hyzmat2.png'
+export {default as service3} from './banners/hyzmat3.png'
+export {default as service4} from './banners/hyzmat4.png'
+
+// footer
+export {default as apple} from './footer/app-store.png'
+export {default as google} from './footer/google-play.png'
+export {default as huawei} from './footer/huawei-icom.png'
+export {default as app} from './footer/app_img.png'
+
+export {default as newPng} from './new.png'
