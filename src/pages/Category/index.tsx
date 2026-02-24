@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-// import categories from "../../data/category.json"
 import Sidebar from '../../components/Sidebar';
 import type { CategoryType } from '../../types/Category';
 import { useGetAllBrands } from '../../queries/brands';

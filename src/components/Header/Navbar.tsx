@@ -8,12 +8,15 @@ import Language from "./Language";
 import Orders from "./Orders";
 import Stick from "./Stick";
 import Category from "./Category";
+import Profile from "./Profile";
+import { useUserStore } from "../../store/user";
 
 function Navbar() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { t } = useTranslation()
   const [open, setOpen] = useState<boolean>(false)
+  const { user, token } = useUserStore(state => state)
   return (
     <div className="bg-white">
       <div className="container mx-auto">
@@ -24,7 +27,7 @@ function Navbar() {
                 <img src={logo} className="w-80" alt="" />
               </Link>
               <Search />
-              <Login />
+            {!token ? <Login /> : <Profile/>}
               <div className="mx-3">
                 <Language />
               </div>
@@ -48,7 +51,7 @@ function Navbar() {
             <Stick />
             <Link to={'/markets'} className="flex items-center gap-3 mx-3 text-custom-red">
               <img src={markets} className="w-8" alt="" />
-              <span>{t(('brands'))}</span>
+              <span>{t(('markets'))}</span>
             </Link>
             <Stick />
             <Link to={'/products'} className="flex items-center gap-3 mx-3 text-custom-red">

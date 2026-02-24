@@ -13,7 +13,8 @@ export const useUserStore = create<UserStoreT>((set) => ({
     phone: "",
     fullname: "",
     email: "",
-    password: ""
+    password: "",
+    passwordConfirm: "",
   },
   token: "",
   setUser: (user: UserLoginDataT | null) =>
