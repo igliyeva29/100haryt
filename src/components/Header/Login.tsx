@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import Button from "./Button";
 import { GoGift, GoPerson } from "react-icons/go";
 import { useEffect, useState } from "react";
-import { useLogin } from "../../queries/user";
+import { useLogin, useRegister } from "../../queries/user";
 import { useUserStore } from "../../store/user";
 import OutClick from "../OutClick";
 import { BiHeart } from "react-icons/bi";
@@ -17,15 +17,16 @@ function Login() {
   const { t } = useTranslation()
   const [data, setData] = useState({
     phone: "",
-    email: "",
     password: "",
-    passwordConfirm: "",
-    fullname: "",
+    passwordConfirm: ""
   })
 
 
   const [dataForget, setDataForget] = useState("")
-  const { mutate, isSuccess } = useLogin()
+
+  const login = useLogin()
+  const register = useRegister()
+
   const { token, user, setUser, setToken } = useUserStore(state => state)
   const handleData = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target
@@ -33,27 +34,37 @@ function Login() {
   }
 
   const sendData = () => {
-    mutate(data)
+     if (active === "agza bolmak" && data.password !== data.passwordConfirm) {
+    alert("Password bilen confirm password gabat gelenok")
+    return
+  }
+
+  if (active === "agza bolmak") {
+    register.mutate(data)
+  } else {
+    login.mutate(data)
+  }
   }
 
   useEffect(() => {
-    setOpenLogin(false)
-    setData({
-      phone: "",
-      email: "",
-      password: "",
-      passwordConfirm: "",
-      fullname: "",
-    })
+    if (login.isSuccess || register.isSuccess) {
+      setData({
+        phone: "",
+        password: "",
+        passwordConfirm: ""
+      })
+      setOpenLogin(false)
+    }
 
     setUser(JSON.parse(localStorage.getItem("user") || "{}"))
     setToken(localStorage.getItem("token") || "")
 
-  }, [isSuccess])
+  }, [login.isSuccess, register.isSuccess])
 
   const sendDataForget = () => {
     console.log(dataForget)
   }
+
   return (
     <div>
       <OutClick action={() => setOpen(false)}>

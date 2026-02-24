@@ -27,7 +27,7 @@ function Navbar() {
                 <img src={logo} className="w-80" alt="" />
               </Link>
               <Search />
-            {!token ? <Login /> : <Profile/>}
+              {!token ? <Login /> : <Profile />}
               <div className="mx-3">
                 <Language />
               </div>

@@ -11,10 +11,7 @@ type UserStoreT = {
 export const useUserStore = create<UserStoreT>((set) => ({
   user: {
     phone: "",
-    fullname: "",
-    email: "",
-    password: "",
-    passwordConfirm: "",
+    password: ""
   },
   token: "",
   setUser: (user: UserLoginDataT | null) =>

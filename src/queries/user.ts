@@ -1,8 +1,8 @@
-import { QueryClient, useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import { useMutation} from "@tanstack/react-query"
 import { login, register} from "../api/user"
-import type { UserLoginDataT } from "../types/User"
-import type { AxiosResponse } from "axios"
 import toast from "react-hot-toast"
+import type { AxiosResponse } from "axios"
+import type { UserLoginDataT } from "../types/User"
 
 export const useRegister = ()=>{
   return useMutation({
@@ -15,17 +15,19 @@ export const useRegister = ()=>{
     }
   })
 }
-export const useLogin = ()=>{
+
+export const useLogin = () => {
   return useMutation({
-    mutationFn:login,
-    onSuccess:(data:AxiosResponse<UserLoginDataT[]> | undefined)=>{
-      if(data){
+    mutationFn: login,
+    onSuccess: (data: UserLoginDataT | undefined) => {
+      if (data) {
         toast.success("Siz ustinlikli iceri girdiniz!")
-        localStorage.setItem("user",JSON.stringify(data.data[0]))
-        localStorage.setItem("token",data.data[0].token!)
+
+        localStorage.setItem("user", JSON.stringify(data))
+        localStorage.setItem("token", data.token || "")
       }
     },
-    onError:()=>{
+    onError: () => {
       alert("Hello yalnyshlyk")
     }
   })
